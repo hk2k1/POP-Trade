@@ -13,6 +13,55 @@
     <!-- Font awesome Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        .image{
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .6s ease;
+            filter: brightness(75%);
+        }
+        .img-overlay-pos{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+        }
+        .col-4:hover .image{
+            transform: translateY(-5px);
+            opacity: 1;
+            filter: brightness(50%);
+        }
+
+        .img-text{
+            color: white;
+            font-size: 25px;
+            opacity: 1;
+            transform: translate(-60%, -150%);
+            text-align: center;
+            transition: transform 1.5s;
+
+        }
+
+        .img-text::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform-origin: bottom left;
+            transition: transform 0.75s ease-out;
+        }
+
+        .img-text:hover::after{
+            transform: scaleX(1);
+        }
+
+
+    </style>
 
 
 </head>
@@ -75,7 +124,7 @@
         </div>
     </div>
 </div>
-    <!-- featured categories ---->
+    <!-- Unique Collector's Set ---->
     <div class="categories">
         <div class="small-container">
             <h2 class="title">Unique Collector's Set</h2>
@@ -93,13 +142,19 @@
         </div>
 
     </div>
-        <!-- featured products ---->
+        <!-- Exclusive featured products ---->
             <div class="small-container">
                 <h2 class="title">Exclusive Featured Products</h2>
 
                 <div class="row">
                     <div class="col-4">
-                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/Dimoo_1000%_Snowman/MEGAJUSTDIMOO1000_Snowman_1_750x.webp') }}">
+                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/Dimoo_1000%_Snowman/MEGAJUSTDIMOO1000_Snowman_1_750x.webp') }}" alt="image_gg" class="image" style="width:100%">
+                        <div class="img-overlay-pos">
+<!--                            CHANGE TEXT HERE-->
+                            <div class="img-text">
+                                BILL
+                            </div>
+                        </div>
                         <h4>POPTRADE MEGA JUST DIMOO 1000% SNOWMAN</h4>
                        <div class="rating">
                             <i class="fa fa-star"></i>
@@ -111,8 +166,14 @@
                         <p>RRP: $1,200.00</p>
                     </div>
                      <div class="col-4">
-                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/molly imaginary wandering series/MollyImaginaryWanderingSeries_1_1800x1800.webp') }}">
-                        <h4>POPTRADE Molly Imaginary Wandering </h4>
+                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/molly imaginary wandering series/MollyImaginaryWanderingSeries_1_1800x1800.webp') }}" alt="image_gg" class="image" style="width:100%">
+                         <div class="img-overlay-pos">
+<!--                            CHANGE TEXT HERE-->
+                            <div class="img-text">
+                                FRANK
+                            </div>
+                         </div>
+                         <h4>POPTRADE Molly Imaginary Wandering </h4>
                        <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -123,8 +184,14 @@
                         <p>RRP: $150.00</p>
                     </div>
                      <div class="col-4">
-                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/POP MART The Monsters Fruits Series/3.webp') }}">
-                        <h4>POPTRADE The Monsters Fruits Series</h4>
+                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/POP MART The Monsters Fruits Series/3.webp') }}"  alt="image_gg" class="image" style="width:100%">
+                        <div class="img-overlay-pos">
+<!--                            CHANGE TEXT HERE-->
+                            <div class="img-text">
+                                JOE
+                            </div>
+                        </div>
+                         <h4>POPTRADE The Monsters Fruits Series</h4>
                        <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -135,8 +202,14 @@
                         <p>RRP: $79.90</p>
                     </div>
                      <div class="col-4">
-                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/POP MART The Monsters Space Adventures Series/3.webp') }}">
-                        <h4>POPTRADE The Monsters Space Series</h4>
+                        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT I USED/POP MART The Monsters Space Adventures Series/3.webp') }}"  alt="image_gg" class="image" style="width:100%">
+                        <div class="img-overlay-pos">
+<!--                            CHANGE TEXT HERE-->
+                            <div class="img-text">
+                                Bala
+                            </div>
+                        </div>
+                         <h4>POPTRADE The Monsters Space Series</h4>
                        <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -147,6 +220,7 @@
                         <p>RRP: $800.00</p>
                     </div>
                 </div>
+
                 <h2 class="title">Latest Products</h2>
                 <div class="row">
                     <div class="col-4">
