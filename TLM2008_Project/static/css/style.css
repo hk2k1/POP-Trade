@@ -54,6 +54,7 @@ p{
     flex-basis: 50%;
     min-width: 25%;
 
+
 }
 .description{
     margin-left: 30%;
@@ -168,8 +169,12 @@ h4{
 }
 .offer-img{
     width: 180%;
-    height: 130%;
+    height: 150%;
     padding: 100px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+
 }
 
 small{
