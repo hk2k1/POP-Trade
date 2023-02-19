@@ -3,17 +3,14 @@
         padding: 0;
         box-sizing: border-box;
 }
-
 body{
         font-family: 'Poppins', sans-serif;
 }
-
 .navbar {
         display:flex;
         align-items: center;
         padding: 20px;
 }
-
 nav{
         flex: 1;
         text-align: right;
@@ -35,9 +32,7 @@ a{
 /* paragraphing */
 p{
         color: #555;
-
 }
-
 .container{
         max-width: 1300px;
         margin: auto;
@@ -49,34 +44,20 @@ p{
     align-items:center;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 5%;
 }
 .col-2{
     flex-basis: 50%;
-    min-width: 25%;
-
-}
-.description{
-    margin-left: 30%;
-}
-.carousel{
-    width: 200%;
-    margin-left: 50%;
-}
-#slider{
-    margin-right:90%;
+    min-width: 20%;
 }
 .col-2 img{
-    width: 200%;
-
+    width: 100%;
 }
-
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
     margin: 25px 0;
-
 }
-
 .btn{
     display: inline-block;
     background: #ff523b;
@@ -86,17 +67,14 @@ p{
     border-radius: 30px;
     transition: background 0.5s;
 }
-
 .btn:hover{
     background: #563434;
 }
 .header{
     background: radial-gradient(#fff, #ffd6d6);
-
 }
 .header row{
     margin-top: 70px;
-
 }
 .categories{
     margin: 70px 0;
@@ -106,7 +84,6 @@ p{
     min-width: 250px;
     margin-bottom: 30px;
 }
-
 .col-3 img{
     width: 100%;
 }
@@ -116,7 +93,6 @@ p{
     padding-left: 25px;
     padding-right: 25px;
 }
-
 .col-4{
     flex-basis: 25%;
     padding: 10px;
@@ -160,6 +136,7 @@ h4{
 .col-4:hover{
     transform: translateY(-5px);
 }
+
 /*-----------Offer-------------*/
 .offer{
     background: radial-gradient(#fff, #F5E1FD);
@@ -173,9 +150,7 @@ h4{
     position: absolute;
     top: 0px;
     bottom: 0px;
-
 }
-
 small{
     color: #555;
 }
@@ -214,10 +189,10 @@ small{
     margin-top: 20px;
     border-radius: 50%;
 }
-
 .testimonial .col-3:hover{
     transform: translateY(-10px);
 }
+
 /*-----------Brands-------------*/
 .brands{
     margin: 100px auto;
@@ -233,6 +208,7 @@ small{
 .brands-logo img:hover{
     filter: grayscale(0);
 }
+
 /*-----------Footer-------------*/
 .footer{
     background: #000;
