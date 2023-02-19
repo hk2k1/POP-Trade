@@ -3,9 +3,10 @@ print("Hello i am in __init__.py beginning")
 from flask import Flask, render_template
 from . import db
 from . import auth
+from . import auction #import module
 
 def create_app(test_config = None):
-    print("Hello i am in __init__.py")
+    print("Executing __init__.py...")
     app = Flask(__name__, instance_relative_config = True)
     app.config.from_mapping(
         SECRET_KEY = 'InternetProgramming',
@@ -36,5 +37,6 @@ def create_app(test_config = None):
     db.init_app(app)
 
     app.register_blueprint(auth.bp)
+    app.register_blueprint(auction.bp) #generate html to send to client
 
     return app

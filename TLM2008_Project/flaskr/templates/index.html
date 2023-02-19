@@ -27,10 +27,15 @@
                 <ul>
                     <li><a href="">Home</a></li>
                     <li> <a href="">Marketplace</a></li>
-                    <li><a href="">Auction</a></li>
+                    <li><a href="/auction/auction">Auction</a></li>
                     <li><a href="/auth/login">Account</a></li>
                     <li> <a href="">Favourites</a></li>
                     <li><a href="">About Us</a></li>
+                    {% if g.user %}
+                        <li><span>{{ g.user['username'] }}</span>
+                    {% else %}
+                        <li><a href="/auth/register">Register</a>
+                    {% endif %}
                 </ul>
             </nav>
             <!--use this method to add new images.-->

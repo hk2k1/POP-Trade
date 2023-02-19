@@ -1,1 +1,1 @@
-HELLO THERE,TO LAUNCH MY SITE, TYPE "python -m flask --app flaskr run --debugger" into terminal
+HELLO THERE,TO LAUNCH MY SITE, TYPE "python -m flask --app flaskr --debug run" into terminal
