@@ -48,22 +48,7 @@ p{
 }
 .col-2{
     flex-basis: 50%;
-<<<<<<< Updated upstream
-    min-width: 25%;
-
-}
-.description{
-    margin-left: 30%;
-}
-.carousel{
-    width: 200%;
-    margin-left: 50%;
-}
-#slider{
-    margin-right:90%;
-=======
     min-width: 20%;
->>>>>>> Stashed changes
 }
 .col-2 img{
     width: 100%;
