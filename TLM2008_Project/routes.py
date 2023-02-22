@@ -18,6 +18,10 @@ def auction():
 def register():
     return render_template("/auth/register.html")
 
+@app.route("/loginpage")
+def loginpage():
+    return render_template("/auth/loginpage.html")
+
 
 #app.register_blueprint(auth.bp)
 

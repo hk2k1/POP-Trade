@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <!--image carousel-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- CSS-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <!-- Font family API-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <!-- Font awesome Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .image{
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .6s ease;
+            filter: brightness(75%);
+        }
+        .img-overlay-pos{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+        }
+        .col-4:hover .image{
+            transform: translateY(-5px);
+            opacity: 1;
+            filter: brightness(50%);
+        }
+
+        .img-text{
+            color: white;
+            font-size: 25px;
+            opacity: 1;
+            transform: translate(-60%, -150%);
+            text-align: center;
+            transition: transform 1.25s;
+
+        }
+
+        .img-text::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: white;
+            transform-origin: bottom left;
+            transition: transform 0.75s ease-out;
+        }
+
+        .img-text:hover::after{
+            transform: scaleX(1);
+        }
+
+
+
+    </style>
+    {% block header %}  {% endblock %}
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='/img/POPTRADE LOGO.png') }}" width="320px">
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li> <a href="">Marketplace</a></li>
+                        <li><a href="/auction">Auction</a></li>
+                        <li> <a href="">Favourites</a></li>
+                        <li><a href="">About Us</a></li>
+                        {% if g.user %}
+                            <li><span>{{ g.user['username'] }}</span>
+                            <li><a href="/logout">Log Out</a>
+                        {% else %}
+                            <li><a href="/register">Register</a>
+                            <li><a href="/loginpage">Log In</a>
+                        {% endif %}
+                    </ul>
+                </nav>
+                <!--use this method to add new images.-->
+                <img src="{{ url_for('static', filename='/img/cart.png') }} "width="30px" height="30px">
+            </div>
+    {%block content%}
+        </div>
+    </div>
+</div>
+    <!-----------login-page------------->
+    <div class="loginpage">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="static/img/image1.png" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="LoginForm">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forget Password</a>
+                        </form>
+
+                        <form id="RegForm">
+                            <input type="text" placeholder="Username">
+                             <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Register</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-----------Footer------------->
+    <div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>
+                    Download App for Android and ios mobile phone.
+                </p>
+                <div class="app-logo">
+                    <img src="static/img/play-store.png">
+                    <img src="static/img/app-store.png">
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="{{ url_for('static', filename='/img/POPTRADELOGO.png') }}" width="320px">
+                <p>
+                    Our Purpose Is To Sustainably Bring The World The Joy Of Having A Pop Mart Toy For Their Collection!
+                </p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Coupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">Copyright 2021 POPTrade Marketplace</p>
+    </div>
+</div>
+
+    {% endblock %}
+<!------------------js for toggle Form--------->
+
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function register(){
+            RegForm.style.transform = "translateX(0px)";
+            LoginForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function login(){
+            RegForm.style.transform = "translateX(300px)";
+            LoginForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
+
+</body>
+</html>

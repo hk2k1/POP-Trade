@@ -5,3 +5,7 @@
 *.xml
 *.xml
 *.xml
+*.pyc
+/TLM2008_Project/venv
+/TLM2008_Project/env
+/env
