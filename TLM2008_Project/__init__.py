@@ -24,8 +24,11 @@ def create_app():
     from .routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
+    from .auction import auctionBp as auction_blueprint
+    app.register_blueprint(auction_blueprint)
+
     # from . import models
-    # with app.app_context():
+    # with app.app_context():Z
     #     db.create_all()
 
     return app
