@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="UTF-8">
+    <!--add to cart-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!--image carousel-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
     <!-- CSS-->
@@ -10,6 +12,8 @@
           rel="stylesheet">
     <!-- Font awesome Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
     <style>
         .image{
@@ -83,11 +87,13 @@
                         {% else %}
                             <li><a href="/register">Register</a>
                             <li><a href="/loginpage">Log In</a>
-                        {% endif %}      
+                        {% endif %}
+
                     </ul>
+                    <img src="{{ url_for('static', filename='/img/cart.png') }} "width="30px" height="30px">
+
                 </nav>
-                <!--use this method to add new images.-->
-                <img src="{{ url_for('static', filename='/img/cart.png') }} "width="30px" height="30px">
+
             </div>
     {%block content%}
         </div>

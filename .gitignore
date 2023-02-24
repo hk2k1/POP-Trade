@@ -6,6 +6,12 @@
 *.xml
 *.xml
 *.pyc
-/TLM2008_Project/venv
-/TLM2008_Project/env
-/env
+*.cfg
+TLM2008_Project/venv
+TLM2008_Project/env
+env
+TLM2008_Project/static/img/POPtrade/WHAT_I_USED
+
+
+
+

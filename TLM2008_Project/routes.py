@@ -22,7 +22,9 @@ def register():
 def loginpage():
     return render_template("/auth/loginpage.html")
 
-
+@app.route("/favourite")
+def favourite():
+    return render_template("/favourite.html")
 #app.register_blueprint(auth.bp)
 
 if __name__ == "__main__":
