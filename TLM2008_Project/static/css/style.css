@@ -260,8 +260,115 @@ ul{
 }
 .copyright{
     text-align: center;
-    padding: 10px; 20px;
+    padding: 10px;
 }
+
+/*Collector Set*/
+.collector-title{
+    height: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.collector-h1{
+    font-size: 50px;
+    position: absolute;
+    top: 300px;
+    right: 200px;
+    width: 600px
+}
+
+.collector-h2{
+    font-size: 30px;
+    position: absolute;
+    top: 560px;
+    right: 200px;
+    width: 600px
+}
+
+.collector-desc{
+    font-size: 15px;
+    position: absolute;
+    top: 600px;
+    right: 200px;
+    width: 600px
+}
+
+.collector-img{
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    width: 500px;
+    height: 600px;
+}
+.c-small-container {
+    position: relative;
+    overflow: hidden;
+    top: 20px;
+    right: 600px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 300px; /* Change this to adjust the width of the container */
+    max-height: 750px;
+    margin: 0 auto;
+  }
+
+.c-large-container{
+    position: fixed;
+    overflow: hidden;
+    top: 230px;
+    left: 480px;
+    max-width: 600px; /* Change this to adjust the width of the container */
+    max-height: 800px;
+    margin: 0 auto;
+}
+
+  
+  .c-image-wrapper {
+    width: calc(40% - 10px); /* 25% width for each image + 10px margin */
+    margin-bottom: 20px;
+  }
+  
+  .c-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    transform: translate(0, 0);
+  }
+
+.c-image-wrapper img:active,
+.wrapper img:focus {
+  cursor: grab;
+  cursor: -webkit-grabbing;
+  transform: translate3d(0, 0, 0);
+}
+
+.c-image-wrapper img:active {
+  cursor: grabbing;
+  cursor: -webkit-grab;
+}
+
+.c-image-wrapper img:focus {
+  outline: none;
+}
+
+  .c-image-wrapper-main{
+    width: calc(100% - 10px); /* 25% width for each image + 10px margin */
+    margin-bottom: 20px;
+  }
+
+  .c-image-wrapper-main img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-width: 600;
+    width: 100%;
+    height: auto;
+  }
 
 
 

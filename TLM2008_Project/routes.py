@@ -26,8 +26,11 @@ def auction():
 def register():
     return render_template("/auth/register.html")
 
-#db.init_app(main)
+@main.route("/Jurassic_World_series")
+def Jurassic_World_series():
+    return render_template("Jurassic_World_series.html")
 
+#db.init_app(main)
 
 #main.register_blueprint(auth.bp)
 

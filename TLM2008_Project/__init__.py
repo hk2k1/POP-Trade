@@ -24,6 +24,9 @@ def create_app():
     from .routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
+    from .item import itemBp as item_blueprint
+    app.register_blueprint(item_blueprint)
+
     # from . import models
     # with app.app_context():
     #     db.create_all()
