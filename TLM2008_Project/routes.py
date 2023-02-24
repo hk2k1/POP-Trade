@@ -1,6 +1,5 @@
 from flask import Flask, render_template, Blueprint
-from flask_sqlalchemy import SQLAlchemy
-from . import db
+#from . import db
 #from . import auth
 
 #main = Flask(__name__)
@@ -18,17 +17,20 @@ main = Blueprint('main',__name__)
 def index():
     return render_template("index.html")
 
-@main.route("/auction")
-def auction():
-    return render_template("/auction/auctionMain.html")
+# @main.route("/auction")
+# def auction():
+#     return render_template("/auction/auctionMain.html") #handled by auction.py now
 
 @main.route("/register")
 def register():
     return render_template("/auth/register.html")
 
-@main.route("/Jurassic_World_series")
-def Jurassic_World_series():
-    return render_template("Jurassic_World_series.html")
+
+
+@main.route("/login")
+def loginpage():
+    return render_template("/auth/login.html")
+
 
 #db.init_app(main)
 
