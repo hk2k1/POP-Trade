@@ -442,7 +442,7 @@ ul{
     position: absolute;
     top: 130px;
     transition: transform 1s;
-
+}
 /*-----------Bill&Frank Animation-------------*/
 .image{
     display: block;
@@ -451,6 +451,7 @@ ul{
     transition: .6s ease;
     filter: brightness(75%);
 }
+
 .img-overlay-pos{
     position: absolute;
     top: 50%;
