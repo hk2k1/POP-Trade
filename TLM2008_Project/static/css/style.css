@@ -262,7 +262,34 @@ ul{
     text-align: center;
     padding: 10px; 20px;
 }
+/* About us page */
+ .container1 {
+        display: flex;
+        justify-content: space-between;
+      }
 
+      .box1 {
+        width: 30%;
+        text-align: center;
+      }
 
+      .box1 img {
+        width: 100px;
+        height: auto;
+        border-radius:50%;
+      }
 
+      .box1 h2 {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      .box1 p {
+        margin-top: 5px;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+ /******************************/
 

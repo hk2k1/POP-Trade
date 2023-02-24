@@ -5,4 +5,7 @@
 *.xml
 *.xml
 *.xml
+*.cfg
+../env
+/TLM2008_Project/static/img/POPtrade/WHAT_I_USED
 __pycache__

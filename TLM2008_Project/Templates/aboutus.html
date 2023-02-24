@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block header %}
+<title>About us</title>
+{% endblock%}
+
+{%block content %}
+    <h2 class="title">About Us</h2>
+        <p class="bold">Who are we?</p>
+        <p>We are a group of SIT students who have come together to create a platform that serves as a one-stop-shop for all your Popmart needs. Our team is composed of dedicated individuals from diverse backgrounds, each bringing their unique perspectives and skill sets to the table. We understand that getting repeated figurines is quite frustrating therefore we are here to help. Our goal is to provide all popmart buyers with a fair and safe platform to trade/sell their repeated collectables.</p>
+        <p class="bold">What is POPTRADE?</p>
+        <p>POPTRADE is a safe and secure platform for clients to sell or trade their figurines. All members that are trading and selling will also be verified when creating an account with us. We also provide a fair dispute resolution where poptrade will have the last say. All terms and conditions are also clear and transparent for user to view.</p>
+        <p class="bold">How does trading work?</p>
+        <p>If clients wants to trade their unwanted figurines, they will post it on the trading page where all figurines that is put up on trade is. When finding the figurine that you are looking for, click into the post and it will show the details of the client and after which you can contact them by yourself.</p>
+        <p class="bold">How does auction work?</p>
+        <p>If there is a rare figurine that someone have acquired but wants to sell it, it can be put to auction where everyone have a chance to bid for it. The highest bidder at the end of the timeline will be the one buying the rare figurine from the seller.</p>
+
+    <h2 class="title">Message from our leaders</h2>
+
+
+  <body>
+    <div class="container1">
+      <div class="box1">
+          <h2>Web Developer</h2>
+          <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/photo_2023-02-14_12-59-19.jpg') }}">
+              <p>Welcome to POPTRADE! In POPTRADE we want to ensure all user have a safe a secure transcation when trading/auctioning their repeated figurines.</p>
+      </div>
+      <div class="box1">
+         <h2>Web Designer</h2>
+          <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/photo_2023-02-14_12-59-19.jpg') }}">
+        <p>Welcome to POPTRADE, with over 6 weeks of experience in HTML,CSS,PHP this is the best we can do to provide you a clear and beautiful webpage for our IP project!</p>
+      </div>
+      <div class="box1">
+         <h2>Content Creator</h2>
+          <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/photo_2023-02-14_12-59-19.jpg') }}">
+        <p>Who else have gotten a repeated figurine when buying a blind box? In POPTRADE we can finally get rid of our repeated blind box figurine.</p>
+      </div>
+    </div>
+  </body>
+{% endblock%}

@@ -25,7 +25,9 @@ def auction():
 @main.route("/register")
 def register():
     return render_template("/auth/register.html")
-
+@main.route("/aboutus")
+def aboutus():
+    return render_template("/aboutus.html")
 #db.init_app(main)
 
 
