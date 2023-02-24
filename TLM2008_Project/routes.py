@@ -25,11 +25,9 @@ def index():
 def register():
     return render_template("/auth/register.html")
 
-@main.route("/aboutus")
-def aboutus():
-    return render_template("/aboutus.html")
-
-#db.init_app(main)
+@main.route("/login")
+def loginpage():
+    return render_template("/auth/login.html")
 
 
 #main.register_blueprint(auth.bp)

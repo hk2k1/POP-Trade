@@ -40,7 +40,7 @@ import sqlite3
 connection = sqlite3.connect('database.db')
 
 
-with open('schema.sql') as f:
+with open('TLM2008_Project\schema.sql') as f:
     connection.executescript(f.read())
 
 cur = connection.cursor()
