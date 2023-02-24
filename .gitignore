@@ -11,3 +11,5 @@ __pycache__
 venv
 TLM2008_Project/static/img/POPtrade/WHAT_I_USED
 
+*.pyc
+*.pyc
