@@ -4,9 +4,15 @@
 {% endblock%}
 
 {%block content %}
+<div>
+    <div>
+    {%for url in image_urls %} <!--receives packaged url list and interates through list, for every url in the list, a <img> is created with the url stated inside-->
 
-{%for url in image_urls %} <!--receives packaged url list and interates through list, for every url in the list, a <img> is created with the url stated inside-->
-<img src="{{ url_for('static', filename=url) }}">
-{%endfor%}
-<h1>hello!</h1>
+    <img src="{{ url_for('static', filename=url[1]) }}" onclick="currentSlide(1)">
+    {%endfor%}
+    </div>
+    <div>
+
+    </div>
+</div>
 {% endblock%}

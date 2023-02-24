@@ -28,6 +28,8 @@ def itemPage(item):
     while(count!=0):
         mergeTuple = (assetPath,str(count),asset_extension)
         outPut = "".join(mergeTuple)
-        assetUrlList.append(outPut)     #create list of static url for client
+        indexedOutPut = (count,outPut)
+        assetUrlList.append(indexedOutPut)     #create list of static url for client
+        print(indexedOutPut)
         count -=1
     return render_template('auction/auctionItem.html',image_urls=assetUrlList)#url list is iterated inside the html file using python scripts, view auctionItem.html to see more
