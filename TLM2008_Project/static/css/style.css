@@ -273,10 +273,16 @@ ul{
 }
 /*-------------loginpage------------*/
 
-
 .loginpage{
     padding: 50px 0;
-    background: radial-gradient(#fff, #F5E1FD);
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-image:url("../img/POPtrade/WHAT_I_USED/Background/login1.png");
+    background-repeat: no-repeat;
+
+    background-position: center;
+    background-size: cover;
 }
 
 .form-container{
