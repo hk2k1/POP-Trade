@@ -25,10 +25,14 @@ def index():
 def register():
     return render_template("/auth/register.html")
 
+
+
 @main.route("/login")
 def loginpage():
     return render_template("/auth/login.html")
 
+
+#db.init_app(main)
 
 #main.register_blueprint(auth.bp)
 
