@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c36190c1-540a-4971-953a-170d031110ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TLM2008_Project/static/js/slider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/Templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/Templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/Templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/Templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/144786105_1814231365420884_354372753061949826_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/145644402_3708594445882984_6662445552496098376_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/145703471_844961096359045_8588453961337709990_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/145994351_2766362897026694_8746216127049558944_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146093719_105738934881776_8634861719252015010_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146263525_121909963147252_5572725978094584331_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146303610_433169564404089_7555858063565593154_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146345340_2866538827000943_7748518737010752159_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146345340_321096779331912_9175158904851954798_n_750x.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/146434163_116446643656162_7990456452940248250_n_750x.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
