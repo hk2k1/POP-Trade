@@ -408,11 +408,18 @@ ul{
 
 .loginpage{
     padding: 50px 0;
-    background: radial-gradient(#fff, #F5E1FD);
+    height: 1000px;
+    width: 100%;
+    background-attachment: fixed;
+    background-image:url("../img/POPtrade/WHAT_I_USED/Background/login1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
 }
 
 .form-container{
-    background: #fff;
+    background: transparent;
     width: 300px;
     height: 400px;
     position: relative;
@@ -491,9 +498,9 @@ ul{
     transform: scaleX(1);
 }
 form input{
-    width: 100%;
+    width: 90%;
     height: 30px;
-    margin: 10px 0;
+    margin: 10px 30px 0;
     padding: 0 10px;
     border: 1px solid #ccc;
 }
@@ -503,7 +510,7 @@ form .btn{
     border: none;
     cursor: pointer;
     margin: 10px;
-
+    margin-top: 8%;
 }
 form .btn:focus{
     outline: none;
@@ -513,10 +520,19 @@ form .btn:focus{
     left: -300px;
 
 }
+.fa-user {
+    position: absolute; top: 15px; left: 30px;
+}
+
+.fa-lock {
+    position: absolute; top: 58px; left: 30px;
+}
+.fa-envelope {
+    position: absolute; top: 95px; left: 26px;
+}
 #RegForm{
     left: 0;
 }
-
 form a{
     font-size: 12px;
 

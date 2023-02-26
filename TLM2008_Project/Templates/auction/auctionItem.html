@@ -8,11 +8,44 @@
     <div>
     {%for url in image_urls %} <!--receives packaged url list and interates through list, for every url in the list, a <img> is created with the url stated inside-->
 
-    <img src="{{ url_for('static', filename=url[1]) }}" onclick="currentSlide(1)">
+    <img src="{{ url_for('static', filename=url[1]) }}">
     {%endfor%}
     </div>
     <div>
-
+        <h1>{{itemInfo['item_name']}}</h1>
+        <h2>{{itemInfo['item_description']}}</h2>
+        <h3>Current Bid: {{itemInfo['item_current_price']}}</h3>
+        <h3>Starting Price: {{itemInfo['item_starting_price']}}</h3>
+        <h3>End Date: {{itemInfo['item_end_date']}}</h3>
+    </div>
+    <div>
+        <form onsubmit="" id= "biddingForm" method = "POST" action="/bid">
+            <label for="bid">Bid:</label>
+            <input type="number" id="bidValue" name="bidValue" min="0" max="1000000" required>
+            <input type="submit" value="Submit">
+            <input type = "hidden" name = "bidItem" id = "bidItem">
+            <input type = "hidden" name = "item_id" id = "item_id" value = "2">
+            {% if g.user %}
+                <input type = "hidden" name = "bidder" id = "bidder" value = "{{g.user['username']}}">
+            {% else %}
+                <input type = "hidden" name = "bidder" id = "bidder" value = "Guest">
+            {% endif %} 
+        </form>
     </div>
 </div>
+
+
+<script>
+    console.log(window.location.href)
+    const stringArray = window.location.href.split("/")
+    let itemID = stringArray[stringArray.length - 2]
+    console.log(itemID)
+    document.getElementById("bidItem").value = itemID;
+    document.getElementById("biddingForm").action = "/auction/auctionItem/bid/" + itemID
+    //document.getElementById("biddingForm").action = "/auction/auctionItem/bid/"
+
+    
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 {% endblock%}
+
