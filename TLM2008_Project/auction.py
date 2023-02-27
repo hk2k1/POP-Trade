@@ -20,10 +20,13 @@ def mainPage():
 #function extension to route auction item request and render images of the item series for auctionItem.html
 @auctionBp.route('/auctionItem/<item>/') #<item> is a variable that stores the last resource request from client and is passed into function as an argument
 def itemPage(item):
-    itemInfoRow = retrieveItemInfo(item)
-    itemInfoList = dict(itemInfoRow)
-    itemInfoList["item_current_price"] = int(itemInfoList["item_current_price"]) + sumCurrentBids(itemInfoList["item_id"])
-    print(itemInfoList)
+    try:
+        itemInfoRow = retrieveItemInfo(item)
+        itemInfoList = dict(itemInfoRow)
+        itemInfoList["item_current_price"] = int(itemInfoList["item_current_price"]) + sumCurrentBids(itemInfoList["item_id"])
+        print(itemInfoList)
+    except:
+        print("Error retrieving item info from database")
     count = 0
     assetUrlList = []
     asset_extension = ".webp"

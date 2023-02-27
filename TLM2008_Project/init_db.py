@@ -49,8 +49,8 @@ connection = sqlite3.connect('TLM2008_Project/database.db')
 # connection.close()
 
 
-connection.execute("CREATE TABLE auction_bids (item_id INTEGER,auction_id INTEGER, user_id INTEGER, bid_amount INTEGER,transaction_date DATETIME, PRIMARY KEY (auction_id, user_id))")
-connection.commit()
+# connection.execute("CREATE TABLE auction_bids (item_id INTEGER,auction_id INTEGER, user_id INTEGER, bid_amount INTEGER,transaction_date DATETIME, PRIMARY KEY (auction_id, user_id))")
+# connection.commit()
 
 # connection.execute("Delete from auction_bids")
 # connection.commit()
@@ -63,3 +63,6 @@ connection.commit()
 
 # connection.execute("drop table auction_bids")
 # connection.commit()
+
+connection.execute("Insert into auction_item(item_id, item_name, item_description, item_starting_price, item_current_price, item_end_date, item_image_url) values (3,'molly','This is item 1',100,100,'2020-12-31 23:59:59','img/POPtrade/WHAT_I_USED/molly/1.webp')")
+connection.commit()
