@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c36190c1-540a-4971-953a-170d031110ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TLM2008_Project/Templates/base_homepage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TLM2008_Project/static/css/css_homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TLM2008_Project/Templates/base_homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/Templates/base_homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TLM2008_Project/Templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/Templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TLM2008_Project/static/css/css_homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/TLM2008_Project/static/css/css_homepage.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
