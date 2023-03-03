@@ -1,15 +1,15 @@
 window.onload = function(){
 
-    const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/main.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_1.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_2.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_3.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_4.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_5.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_6.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_7.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_8.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_9.webp'];
+    const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/3.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/1.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/2.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/4.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/5.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/6.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/7.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/8.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/9.webp',
+                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/10.webp'];
 
     let counter = 0;
 

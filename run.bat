@@ -1,0 +1,3 @@
+@echo off
+echo running virtual environment...
+call venv\Scripts\activate & python -m flask --app TLM2008_Project --debug run
