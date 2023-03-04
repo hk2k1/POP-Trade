@@ -1,45 +1,56 @@
-window.onload = function(){
+window.onload = function() {
+  // disable scrolling on page load
+  document.documentElement.style.overflow = 'hidden';
+  document.body.scroll = "no";
 
-    const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/3.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/1.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/2.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/4.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/5.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/6.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/7.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/8.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/9.webp',
-                    '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/10.webp'];
+  // enable scrolling on link click
+  document.getElementById('enable-scroll').addEventListener('click', function() {
+    document.documentElement.style.overflow = 'auto';
+    document.body.scroll = "yes";
+  });
+};
 
-    let counter = 0;
 
-    const imageElement = document.getElementById("img-js");
-    const barElement = document.getElementById("slider-bar");
-    barElement.style.width = "0%";
-    function changeImage() {
-        counter++;
-        if (counter >= images.length) {
-        counter = 0;
-        }
-        const nextImage = images[counter];
-        imageElement.setAttribute("src", nextImage);
-        barElement.style.width =  ((counter+1) / images.length) * imageElement.clientWidth  + "px";
+const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/main.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_1.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_2.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_3.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_4.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_5.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_6.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_7.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_8.webp',
+                '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_9.webp'];
 
+let counter = 0;
+
+const imageElement = document.getElementById("img-js");
+const barElement = document.getElementById("slider-bar");
+barElement.style.width = "0%";
+function changeImage() {
+    counter++;
+    if (counter >= images.length) {
+    counter = 0;
     }
+    const nextImage = images[counter];
+    imageElement.setAttribute("src", nextImage);
+    barElement.style.width =  ((counter+1) / images.length) * imageElement.clientWidth  + "px";
 
-    let intervalId;
+}
 
-    imageElement.addEventListener("mouseover", function() {
-      intervalId = setInterval(changeImage, 1000);
-      barElement.style.display = "block";
-    });
+let intervalId;
 
-    imageElement.addEventListener("mouseout", function() {
-      clearInterval(intervalId);
-      imageElement.setAttribute("src", images[0]);
-      barElement.style.display = "none";
-      barElement.style.width = "0%";
-    });
+imageElement.addEventListener("mouseover", function() {
+  intervalId = setInterval(changeImage, 1000);
+  barElement.style.display = "block";
+});
+
+imageElement.addEventListener("mouseout", function() {
+  clearInterval(intervalId);
+  imageElement.setAttribute("src", images[0]);
+  barElement.style.display = "none";
+  barElement.style.width = "0%";
+});
 
 
 //=====================    Using Fade ==========================
@@ -103,6 +114,3 @@ window.onload = function(){
 //      clearInterval(intervalId);
 //      imageElement.setAttribute("src", images[0]);
 //    });
-
-
-};
