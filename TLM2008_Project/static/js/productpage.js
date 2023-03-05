@@ -1,3 +1,4 @@
+// Toggle Heart to Red
 function toggleHeartColor() {
     const heart = document.getElementById("heart");
     if (heart.classList.contains("red")) {
@@ -5,8 +6,9 @@ function toggleHeartColor() {
     } else {
       heart.classList.add("red");
     }
-  }
+}
 
+// Toggle Star to Orange
 function toggleStarColor() {
     const star = document.getElementById("star");
     if (star.classList.contains("orange")) {
@@ -14,4 +16,4 @@ function toggleStarColor() {
     } else {
       star.classList.add("orange");
     }
-  }
+}

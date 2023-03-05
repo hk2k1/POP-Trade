@@ -1,16 +1,26 @@
+/*
+    User entering webpage will be locked out of scrolling until explore more button is pressed
+    When Explore More/#scroll-enable is pressed User will be automatically scrolled to #down id
+*/
 window.onload = function() {
   // disable scrolling on page load
   document.documentElement.style.overflow = 'hidden';
   document.body.scroll = "no";
+  var scroll_element = document.getElementById("down");
 
   // enable scrolling on link click
   document.getElementById('enable-scroll').addEventListener('click', function() {
     document.documentElement.style.overflow = 'auto';
     document.body.scroll = "yes";
+    scroll_element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest"
+    });
   });
 };
 
-
+// Slideshow of images for Zodiac Series | First Image must always be the same as html displayed image
 const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/main.webp',
                 '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_1.webp',
                 '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_2.webp',
@@ -24,9 +34,12 @@ const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/main.webp',
 
 let counter = 0;
 
+// loads #img-js & #slider-bar into imageElement & barElement
 const imageElement = document.getElementById("img-js");
 const barElement = document.getElementById("slider-bar");
 barElement.style.width = "0%";
+
+// Increment along array and display to Elements + Increment Slider bar
 function changeImage() {
     counter++;
     if (counter >= images.length) {
@@ -40,11 +53,13 @@ function changeImage() {
 
 let intervalId;
 
+// Detects Mouse Hover
 imageElement.addEventListener("mouseover", function() {
   intervalId = setInterval(changeImage, 1000);
   barElement.style.display = "block";
 });
 
+// Detects Mouse Exit Hover
 imageElement.addEventListener("mouseout", function() {
   clearInterval(intervalId);
   imageElement.setAttribute("src", images[0]);
@@ -53,7 +68,7 @@ imageElement.addEventListener("mouseout", function() {
 });
 
 
-//=====================    Using Fade ==========================
+//=====================    Using Fade | NOT WORKING DO NOT USE  ==========================
 
 //    function changeImage(){
 //        counter++;

@@ -1,4 +1,7 @@
-/* General Webpage Elements */
+/*
+    General Webpage Elements
+    DO NOT CHANGE Z-INDEX VALUES
+*/
 * {
     margin: 0;
     padding: 0;
@@ -76,7 +79,7 @@ a:hover{
     z-index: 1;
     top: 100px;
     border-radius: 10px;
-
+    z-index: auto;
 }
 
 .form-container span{
@@ -86,12 +89,10 @@ a:hover{
     cursor: pointer;
     width: 100px;
     display: inline-block;
-
 }
 
 .form-btn{
     display: inline-block;
-
 }
 .form-container form{
     max-width: 300px;
@@ -192,7 +193,6 @@ button, input, optgroup, select, textarea{
     height: 1069px;
     width: 100%;
     background-attachment: fixed;
-
     background: url("../img/POPtrade/WHAT_I_USED/Background/background_login.png") no-repeat fixed center;
     background-repeat: no-repeat;
     background-position: center;
@@ -206,6 +206,7 @@ button, input, optgroup, select, textarea{
     height: 1050px;
     width: 107%;
     background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    z-index: -2;
 }
 
 /* Slideshow of Images | Fading Animation js */
@@ -226,7 +227,7 @@ button, input, optgroup, select, textarea{
 
 .slido-wrapper{
     position: absolute;
-    z-index: 1;
+    z-index: auto;
     top: 480px;
     left: 605px;
     right: 100px;
@@ -242,7 +243,7 @@ button, input, optgroup, select, textarea{
     align-items: center;
     justify-content: center;
     position: relative;
-    z-index: 1;
+    z-index: 4;
 }
 
 .homepage_nav{
@@ -254,6 +255,8 @@ button, input, optgroup, select, textarea{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 4;
+
 }
 
 .homepage_nav .logo{
@@ -266,15 +269,21 @@ button, input, optgroup, select, textarea{
 }
 
 .ul-list a{
+    transition: 0.4s;
+    color: #c3c1c1;
+    font-size: 20px;
     text-decoration: none;
-    color: #fff;
-    font-size: 17px;
-    padding: 6px 10px;
-    border-radius: 60px;
+    padding: 0 10px;
+    margin: 0 10px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0);
+    border-radius: 50px;
 }
 
 .ul-list a:hover{
-    text-decoration: none;
-    background: #000000;
-    color: #fff;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 3.6);
+    backdrop-filter: blur(20px);
+    padding: 24px 10px;
+    color: white;
 }
+
+
