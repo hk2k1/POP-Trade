@@ -20,6 +20,12 @@ window.onload = function() {
   });
 };
 
+const context = document.getElementById('context-anim');
+
+context.addEventListener('animationend', () => {
+  context.classList.add('reappear');
+});
+
 // Slideshow of images for Zodiac Series | First Image must always be the same as html displayed image
 const images = ['/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/main.webp',
                 '/static/img/POPtrade/WHAT_I_USED/ZodiacSeries/img_1.webp',
