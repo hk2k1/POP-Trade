@@ -1,0 +1,34 @@
+.centerbox{
+    display:flex;
+    width:500px;
+    height:500px;
+    border-style:solid;
+    border-color:red;
+    align-items:center;
+    justify-content:center;
+    margin-left:10px;
+/*    background-color:pink;*/
+}
+.uploadbox{
+/*    background-color:green;*/
+    margin-left:50px;
+
+}
+
+.maincont{
+    display:flex;
+/*    background-color:red;*/
+    justify-content:space-between;
+}
+.formbox{
+    padding:5%;
+/*    background-color:blue;*/
+    width:600px;
+    height:400px;
+}
+.IDwidth{
+    width:250px;
+}
+.Pwidth{
+    width:150px;
+}

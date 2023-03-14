@@ -1,0 +1,49 @@
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 1300px;
+    height: auto;
+    margin: 300px 300px 0px 260px;
+}
+
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  
+  .product {
+    width: (1300/3)px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .product img {
+    width: 400px;
+    height: 450px;
+    padding-left: 20px
+  }
+
+  .buynow{
+    width: 200px;
+    height: 50px;
+    background-color: #FFA500;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .buynow:hover{
+    background-color: #FF8C00;
+  }
+
+  .buynow a{
+    text-decoration: none;
+    color: white;
+  }

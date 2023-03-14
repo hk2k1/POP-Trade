@@ -15,13 +15,18 @@
         <h2>{{itemInfo['item_description']}}</h2>
         <h3>Current Bid: {{itemInfo['item_current_price']}}</h3>
         <h3>Starting Price: {{itemInfo['item_starting_price']}}</h3>
-        <h3>End Date: {{itemInfo['item_end_date']}}</h3>
+        <h3>Auction End Date: {{itemInfo['item_end_date']}}</h3>
+        <h3>Time left: {{itemInfo['item_time_left']}}</h3>
     </div>
     <div>
-        <form onsubmit="" id= "biddingForm" method = "POST" action="/bid">
+        <form onsubmit="alertFunction()" id= "biddingForm" method = "POST" action="/bid">
             <label for="bid">Bid:</label>
+            {%if itemExpired%}
+            <h1>Item expired</h1>
+            {%else%}
             <input type="number" id="bidValue" name="bidValue" min="0" max="1000000" required>
             <input type="submit" value="Submit">
+            {%endif%}
             <input type = "hidden" name = "bidItem" id = "bidItem">
             <input type = "hidden" name = "item_id" id = "item_id" value = "{{itemInfo['item_id']}}">
             {% if g.user %}
@@ -35,14 +40,18 @@
 
 
 <script>
-    console.log(window.location.href)
-    const stringArray = window.location.href.split("/")
-    let itemID = stringArray[stringArray.length - 2]
-    console.log(itemID)
+    console.log(window.location.href);
+    const stringArray = window.location.href.split("/");
+    let itemID = stringArray[stringArray.length - 2];
+    console.log(itemID);
     document.getElementById("bidItem").value = itemID;
-    document.getElementById("biddingForm").action = "/auction/auctionItem/bid/" + itemID
-    //document.getElementById("biddingForm").action = "/auction/auctionItem/bid/"
+    document.getElementById("biddingForm").action = "/auction/auctionItem/bid/" + itemID;
 
+    //document.getElementById("biddingForm").action = "/auction/auctionItem/bid/";
+    function alertFunction(){
+        alert("Bid submitted!")
+    }
+    
     
 </script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

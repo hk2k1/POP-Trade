@@ -31,7 +31,6 @@ def register():
 def loginpage():
     return render_template("/auth/login.html")
 
-
 #db.init_app(main)
 
 #main.register_blueprint(auth.bp)

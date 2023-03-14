@@ -1,0 +1,45 @@
+{%extends 'base.html'%}
+{%block header%}
+<title>Create Listing</title>
+<link rel="stylesheet" type = "text/css" href="../../../static/css/sellpage.css">
+{%endblock%}
+{%block content%}
+<h1>creating listing for user id:{{user_id}}</h1>
+<h1 class="headercenter">Upload image files</h1>
+<div class="maincont">
+    <div class="centerbox">
+        <div class="uploadbox"><p>File type supported jpg, png</p>
+         <input type="file" accept="image/jpeg, image/png" multiple/>
+        </div>
+    </div>
+
+    <div class="formbox">
+        <form>
+        <label for="sell-type">Sell Type:</label>
+        <select id="sell-type" name="sell-type">
+          <option value="">Select auction/sell</option>
+          <option value="Sell">Sell</option>
+          <option value="Auction">Auction</option>
+        </select>
+<br>
+
+        <label for="item-name">Item Name:</label>
+        <select id="item-name" name="item-name">
+        <option value="Molly">Molly</option>
+        <option value="Dimmo">Dimmo</option>
+        </select>
+<br>
+
+        <label for="item-description">Item Description:</label>
+        <input type="text" id="item-description" name="item-description" placeholder="Enter item description" class="IDwidth">
+<br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" placeholder="Enter price" min="0" class="Pwidth">
+
+        </form>
+
+    </div>
+
+</div>
+{%endblock%}

@@ -24,12 +24,14 @@ def create_app():
     from .routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
 
-    from .item import itemBp as item_blueprint
-    app.register_blueprint(item_blueprint)
+    from .market import marketBp as market_blueprint
+    app.register_blueprint(market_blueprint)
 
     from .auction import auctionBp as auction_blueprint
     app.register_blueprint(auction_blueprint)
 
+    from .listing import listingBp as listing_blueprint
+    app.register_blueprint(listing_blueprint)
 
     # from . import models
     # with app.app_context():Z

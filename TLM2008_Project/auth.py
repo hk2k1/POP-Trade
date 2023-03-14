@@ -103,7 +103,8 @@ def login_register():
             if error is None:
                 session.clear()
                 session['user_id'] = user['id']
-                return redirect(url_for('main.index'))
+                userUrl = "/auth/user"+str(user['id'])
+                return redirect(url_for('main.index',values=userUrl))
 
             flash(error)
 
@@ -141,6 +142,12 @@ def login_register():
             flash(error)
     return render_template('auth/login_register.html')
 
+@bp.route('/user/<userId>/',methods =('GET','POST'))
+def userProfile(userId):
+    userInfo = fetchUserInfo(userId)
+    print(userInfo)
+    return render_template('auth/user_profile.html',userInfo = userInfo)
+
 #before app loads, check if user is login and session is created. If user is login, session is created, else proceeds with no user session
 @bp.before_app_request
 def load_logged_in_user():
@@ -169,3 +176,10 @@ def login_required(view):
         return view(**kwargs)
 
     return wrapped_view
+
+def fetchUserInfo(userId):
+    user = get_db().execute(
+            'SELECT * FROM user_info WHERE user_id = ?', (userId,)
+        ).fetchone()
+    user = dict(user)
+    return user

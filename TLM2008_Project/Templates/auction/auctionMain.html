@@ -7,11 +7,12 @@
 <h1>Auction</h1>
 
 <div class="row">
+    {%for item in allItemInfo%}
     <div class="col-4">
-        <a href="/auction/auctionItem/Dimoo/">
-            <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/Dimoo/1.webp') }}">
+        <a href="{{item['url']}}">
+            <img src="{{ url_for('static', filename=item['item_image_url']) }}">
         </a>
-        <h4>POPTRADE MEGA JUST DIMOO 1000% SNOWMAN</h4>
+        <h4>{{item['item_description']}}</h4>
        <div class="rating">
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
@@ -19,50 +20,9 @@
             <i class="fa fa-star"></i>
             <i class="fa fa-star"></i>
         </div>
-        <p>RRP: $1,200.00</p>
+        <p>RRP: {{item['item_current_price']}}</p>
     </div>
-     <div class="col-4">
-        <a href="/auction/auctionItem/molly/">
-            <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/molly/1.webp') }}">
-        </a>
-        <h4>POPTRADE Molly Imaginary Wandering </h4>
-       <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>RRP: $150.00</p>
-    </div>
-     <div class="col-4">
-        <a href="/auction/auctionItem/MonstersFruits/">
-            <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/MonstersFruits/3.webp') }}">
-        </a>
-        <h4>POPTRADE The Monsters Fruits Series</h4>
-       <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-            <i class="fa fa-star-o"></i>
-        </div>
-        <p>RRP: $79.90</p>
-    </div>
-     <div class="col-4">
-        <a href="/auction/auctionItem/SpaceAdventures/">
-        <img src="{{ url_for('static', filename='/img/POPtrade/WHAT_I_USED/SpaceAdventures/3.webp') }}">
-    </a>
-        <h4>POPTRADE The Monsters Space Series</h4>
-       <div class="rating">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-half-o"></i>
-        </div>
-        <p>RRP: $800.00</p>
-    </div>
+    {%endfor%}
 </div>
 </section>
 {%endblock%}

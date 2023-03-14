@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>{{userInfo['username']}}</h1>
+<h1>{{userInfo['user_id']}}</h1>
+<h1>{{userInfo['userTotalListing']}}</h1>
+<form action="/listing/createListing">
+    <input id="sell-button" type="submit" value="Sell"/>
+</form>
+<h1>hello</h1>
+{%endblock%}
+
+{%block scripts%}
+{%endblock%}
+
+{%block footer%} {%endblock%}

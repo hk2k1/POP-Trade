@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+
+{% block header %}
+<title>Market Place</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/Marketplace.css')}}">
+{% endblock%}
+
+{% block content %}
+<nav>
+
+</nav>
+
+<div class = "product-container">
+  
+    <ul class="product-list">
+    {%for item in allItemInfo%}
+      <li class="product">
+        <img src="{{ url_for('static', filename=item['item_image_url']) }}" >
+        <h2>{{item['item_name']}}</h2>
+        <p>{{item['item_description']}}</p>
+        <form action="{{item['url']}}" method = "GET">
+          <input class="buynow" type="submit" value="Buy Now"/>
+        </form>
+        <!-- <button class = "buynow" href="{{item['url']}}">Buy now</button> -->
+      </li>
+    {%endfor%}
+    </ul>
+    <!--remove once not needed-->
+        <!-- <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/mickey/7.webp') }}" >
+          <h2>Product 1</h2>
+          <p>Description of product 1</p>
+          <button class = "buynow" href="#">Buy now</button>
+        </li> -->
+        <!-- <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/AllCollection/2.webp') }}">
+          <h2>Product 2</h2>
+          <p>Description of product 2</p>
+          <button class = "buynow" href="#">Buy now</button>
+        </li>
+        <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/AllCollection/3.webp') }}">
+          <h2>Product 3</h2>
+          <p>Description of product 3</p>
+          <button class = "buynow" href="#">Buy now</button>
+        </li>
+        <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/AllCollection/4.webp') }}">
+          <h2>Product 4</h2>
+          <p>Description of product 4</p>
+          <button class = "buynow"><a href="">Buy now</a></button>
+        </li>
+        <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/AllCollection/5.webp') }}">
+          <h2>Product 5</h2>
+          <p>Description of product 5</p>
+          <button class = "buynow" href="#">Buy now</button>
+        </li>
+        <li class="product">
+          <img src="{{ url_for('static', filename='img/POPtrade/WHAT_I_USED/AllCollection/6.webp') }}">
+          <h2>Product 6</h2>
+          <p>Description of product 6</p>
+          <button class = "buynow" href="#">Buy now</button>
+        </li> -->
+        <!-- Add more products as needed-->
+
+
+</div>
+
+
+{% endblock%}
+

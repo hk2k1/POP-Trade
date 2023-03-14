@@ -64,5 +64,24 @@ connection = sqlite3.connect('TLM2008_Project/database.db')
 # connection.execute("drop table auction_bids")
 # connection.commit()
 
-connection.execute("Insert into auction_item(item_id, item_name, item_description, item_starting_price, item_current_price, item_end_date, item_image_url) values (3,'molly','This is item 1',100,100,'2020-12-31 23:59:59','img/POPtrade/WHAT_I_USED/molly/1.webp')")
+# connection.execute("Insert into auction_item(item_id, item_name, item_description, item_starting_price, item_current_price, item_end_date, item_image_url) values (6,'han','han series',2199,10000,'2023-12-31 23:59:59','img/POPtrade/WHAT_I_USED/han/1.webp')")
+
+# connection.execute("ALTER TABLE listed_item add series varchar(255);")
+
+# connection.execute("create table listed_item_sub(parent_item_id,item_id item_name, item_description, item_price, item_image_url, PRIMARY KEY (item_id))")
+
+connection.execute("update listed_item set item_image_url = 'img/POPtrade/WHAT_I_USED/PuckyxSanrio/1.webp' where item_id == 7")
+
+# connection.execute("alter table user_info add contactNo TEXT")
+
+# connection.execute("create table user_info(user_id INTEGER, username TEXT,userRating FLOAT,userTotalListing INTEGER, PRIMARY KEY (user_id))")
+
+
+# connection.execute("delete from auction_item where item_id = 4")
+
+#connection.execute("insert into user_info(user_id,username,userRating,userTotalListing) values (2,'user2',3.2,2)")
+
+#connection.execute("insert into listed_item(item_id,item_name,item_description,item_starting_price,item_image_url,item_catergory,series,user_id) values (11,'mickey','mickey series 7/13',78,'img/POPtrade/WHAT_I_USED/mickey/7.webp','market','NO','8')")
+#connection.execute("delete from listed_item where item_id = 7")
+
 connection.commit()

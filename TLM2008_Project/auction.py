@@ -15,23 +15,34 @@ print("Initializing auction.py...")
 #function extension to route auction request for render of auction front page
 @auctionBp.route('/')
 def mainPage():
-    return render_template('auction/auctionMain.html')
+    allItemInfo = []
+    dbItemInfo = retriveAllItemInfo()
+    for stuff in dbItemInfo:
+        stuff = dict(stuff)
+        stuff['url'] = "/auction/auctionItem/{}/".format(stuff['item_id'])
+        allItemInfo.append(stuff)
+    return render_template('auction/auctionMain.html',allItemInfo=allItemInfo)
+    # return render_template('auction/auctionMain.html')
 
 #function extension to route auction item request and render images of the item series for auctionItem.html
 @auctionBp.route('/auctionItem/<item>/') #<item> is a variable that stores the last resource request from client and is passed into function as an argument
 def itemPage(item):
     try:
         itemInfoRow = retrieveItemInfo(item)
-        itemInfoList = dict(itemInfoRow)
-        itemInfoList["item_current_price"] = int(itemInfoList["item_current_price"]) + sumCurrentBids(itemInfoList["item_id"])
-        print(itemInfoList)
+        itemInfoDict = dict(itemInfoRow)
+        print(itemInfoDict)
     except:
         print("Error retrieving item info from database")
+    itemInfoDict["item_time_left"] = checkTimeLeft(itemInfoDict["item_end_date"])
+    if itemInfoDict["item_time_left"] == "Expired":
+        itemExpired = True
+    else:
+        itemExpired = False
     count = 0
     assetUrlList = []
     asset_extension = ".webp"
-    assetDir= "TLM2008_Project/static/img/POPtrade/WHAT_I_USED/"+item+"/"   #assetDir and assetPath is different as os.listdir works on entire folder structure while html render works inside static folder
-    assetPath = "img/POPtrade/WHAT_I_USED/"+item+"/"
+    assetDir= "TLM2008_Project/static/img/POPtrade/WHAT_I_USED/"+itemInfoDict['item_name']+"/"   #assetDir and assetPath is different as os.listdir works on entire folder structure while html render works inside static folder
+    assetPath = "img/POPtrade/WHAT_I_USED/"+itemInfoDict['item_name']+"/"
     for assetName in os.listdir(assetDir):      #iterates through every asset inside directory
         if assetName.endswith(asset_extension):
             count +=1       #increment count whenever asset is detected
@@ -40,18 +51,16 @@ def itemPage(item):
         outPut = "".join(mergeTuple)
         indexedOutPut = (count,outPut)
         assetUrlList.append(indexedOutPut)     #create list of static url for client
-        print(indexedOutPut)
+        #print(indexedOutPut)
         count -=1
-    return render_template('auction/auctionItem.html',image_urls=assetUrlList,itemInfo = itemInfoList)#url list is iterated inside the html file using python scripts, view auctionItem.html to see more
+    return render_template('auction/auctionItem.html',image_urls=assetUrlList,itemInfo = itemInfoDict,itemExpired=itemExpired)#url list is iterated inside the html file using python scripts, view auctionItem.html to see more
 
 @auctionBp.route('/auctionItem/bid/<item>/',methods=('GET', 'POST'))
 def bidPage(item):
-    print(item)
     print("Bid page is accessed by user: "+request.form['bidder'])
-    print("Redirecting to login page...")
     if(request.form['bidder'] =="Guest"):
+        print("Redirecting to login page...")
         return redirect(url_for('auth.login_register'))
-    
     if request.method == 'POST':
         username = request.form['bidder']
         bidValue = request.form['bidValue']
@@ -67,6 +76,8 @@ def bidPage(item):
                 (auctionId,username, bidValue, transactionDate,item_id),
             )
             db.commit()
+            updateCurrentBids(item_id,bidValue)
+            flash("Bid successfully placed!")
             return redirect(url_for('auction.itemPage',item=item))
         except db.DataError:
             error = f"There's an error with the database."
@@ -77,8 +88,15 @@ def bidPage(item):
 def retrieveItemInfo(item):
     db = get_db()
     itemInfo = db.execute(
-        "SELECT * FROM auction_item WHERE item_name = ?",(item,)
+        "SELECT * FROM listed_item WHERE item_id = ?",(item,)
     ).fetchone()
+    return itemInfo
+
+def retriveAllItemInfo():
+    db = get_db()
+    itemInfo = db.execute(
+        "SELECT * FROM listed_item where item_catergory = 'auction'"
+    ).fetchall()
     return itemInfo
 
 def sumCurrentBids(item):
@@ -88,3 +106,24 @@ def sumCurrentBids(item):
     ).fetchone()
     #print("retrieved values: " + str(sumOfBids[0]))
     return sumOfBids[0]
+
+def updateCurrentBids(itemId,amount):
+    db = get_db()
+    currentPrice = db.execute(
+        "SELECT item_current_price from listed_item WHERE item_id = ?",(itemId,)
+    ).fetchone()
+    updatePrice = int(currentPrice[0]) + int(amount)
+    db.execute(
+        "UPDATE listed_item SET item_current_price = ? WHERE item_id = ?",(updatePrice,itemId)
+    )
+    db.commit()
+
+def checkTimeLeft(time):
+    timeLeft = datetime.datetime.strptime(time,'%Y-%m-%d %H:%M:%S') - datetime.datetime.now()
+    if(timeLeft < datetime.timedelta(0)):
+        return "Expired"
+    else:
+        days = timeLeft.days
+        hours = timeLeft.seconds//3600
+        timeLeft_str = str(days)+" days "+str(hours)+" hours"
+        return timeLeft_str
